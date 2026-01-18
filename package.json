@@ -1,0 +1,53 @@
+{
+  "name": "n8n-nodes-webling",
+  "version": "1.0.0",
+  "description": "n8n nodes for Webling API - member management, finance and automation",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "webling",
+    "member-management",
+    "accounting",
+    "finance"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "author": {
+    "name": "Thibault Schowing",
+    "email": "thibault@example.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/WeblingApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Webling/Webling.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.0.0",
+    "prettier": "^2.7.1",
+    "typescript": "^5.0.0"
+  }
+}
